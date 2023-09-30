@@ -11,9 +11,14 @@ public class Customer {
 
   public Customer(Name name, Email email, Balance balance) {
 
-    if (name == null) new Exception("Customer.name is null");
-    if (email == null) new Exception("Customer.email is null");
-    if (balance == null) new Exception("Customer.balance is null");
+    if (name == null)
+      new Exception("Customer.name is null");
+
+    if (email == null)
+      new Exception("Customer.email is null");
+
+    if (balance == null)
+      new Exception("Customer.balance is null");
 
     this.name = name;
     this.email = email;
@@ -48,7 +53,7 @@ public class Customer {
 
     float total = this.balance.getValue() + valueToReceive.getValue();
     Balance newBalance = new Balance(total, this.balance.getCoin());
-    
+
     this.balance = newBalance;
   }
 }
