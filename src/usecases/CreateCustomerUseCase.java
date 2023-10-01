@@ -2,6 +2,7 @@ package usecases;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+
 import modules.dtos.CustomerToCreationDto;
 import modules.entities.Customer;
 import services.CustomerService;
@@ -45,12 +46,17 @@ public class CreateCustomerUseCase {
         valueAccount,
         coin);
 
-    final Customer customer = CustomerService.create(customerDto);
+    try {
+      final Customer customer = CustomerService.create(customerDto);
+      this.customers.add(customer);
 
-    this.customers.add(customer);
-    flow = 0;
+      System.out.print("\nCliente criado com sucesso!\n\n");
+      flow = 0;
 
-    System.out.print("\nCliente criado com sucesso!\n\n");
+    } catch (Exception e) {
+      System.out.print(e.getMessage());
+      flow = 0;
+    }
 
     return flow;
   }

@@ -26,10 +26,9 @@ public class Messages {
     String message = """
         * Menu *
         1 - cadastrar cliente
-        2 - consultar cliente
-        3 - listar clientes
-        4 - acessar cliente
-        5 - sair
+        2 - listar clientes
+        3 - acessar cliente
+        4 - sair
         """;
     System.out.println(message);
   }
@@ -37,7 +36,9 @@ public class Messages {
   public static void menuInAccount() {
     System.out.println("""
         * Menu *
-        1 - receber valor
+        1 - transferir valor
+        2 - voltar
+        3 - sair
         """);
   }
 }
